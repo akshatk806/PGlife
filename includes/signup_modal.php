@@ -25,7 +25,7 @@
                                 <i class="fas fa-phone-alt"></i>
                             </span>
                         </div>
-                        <input type="number" class="form-control" name="phone" placeholder="Phone Number" maxlength="10" minlength="10" required>
+                        <input type="text" class="form-control" name="phone" placeholder="Phone Number" maxlength="10" minlength="10" pattern="[1-9]{1}[0-9]{9}" title="Should contain exactly 10 digits" required>
                     </div>
 
                     <div class="input-group form-group">
@@ -44,7 +44,7 @@
                             </span>
                         </div>
                         <input type="password" class="form-control" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-                        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
+                        title="Must contain at least one number and one uppercase and lowercase letter, at least one special character and at least 8 or more characters" 
                         placeholder="Password" minlength="6" required>
                     </div>
 
