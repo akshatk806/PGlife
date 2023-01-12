@@ -75,8 +75,66 @@ $interested_properties = mysqli_fetch_all($result_2, MYSQLI_ASSOC);
                         <div class="phone"><?= $user['phone'] ?></div>
                         <div class="college"><?= $user['college_name'] ?></div>
                     </div>
-                    <div class="edit">
-                        <div class="edit-profile">Edit Profile</div>
+
+                    <a style="text-decoration: underline; cursor:pointer; font-size:small; color:#4dc7bc" type="link" data-toggle="modal" data-target="#update-modal">Edit Profile</a>
+
+                    <div class="modal fade" id="update-modal" tabindex="-1" role="dialog" aria-labelledby="signup-heading" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="signup-heading">Edit Profile</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form id="update-form" class="form" role="form" method="post" action="./api/edit_profile.php">
+                                        <div class="input-group form-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    <i class="fas fa-user"></i>
+                                                </span>
+                                            </div>
+                                            <input type="text" class="form-control" name="full_name" value="<?= $user['full_name'] ?>" placeholder="Full Name" maxlength="30" required>
+                                        </div>
+
+                                        <div class="input-group form-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    <i class="fas fa-phone-alt"></i>
+                                                </span>
+                                            </div>
+                                            <input type="text" class="form-control" name="phone" value="<?= $user['phone'] ?>" placeholder="Phone Number" maxlength="10" minlength="10" pattern="[1-9]{1}[0-9]{9}" title="Should contain exactly 10 digits" required>
+                                        </div>
+
+                                        <div class="input-group form-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    <i class="fas fa-envelope"></i>
+                                                </span>
+                                            </div>
+                                            <input type="email" class="form-control" name="email" value="<?= $user['email'] ?>" placeholder="Email" required>
+                                        </div>
+
+                                        <div class="input-group form-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    <i class="fas fa-university"></i>
+                                                </span>
+                                            </div>
+                                            <input type="text" class="form-control" name="college_name" value="<?= $user['college_name'] ?>" placeholder="College Name" maxlength="150" required>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-block btn-primary">Update Profile</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
