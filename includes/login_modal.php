@@ -25,7 +25,8 @@
                                 <i class="fas fa-lock"></i>
                             </span>
                         </div>
-                        <input type="password" class="form-control" name="password" placeholder="Password" minlength="6" required>
+                        <input id="password-field-login" type="password" class="form-control" name="password" placeholder="Password" minlength="6" required>
+                        <span toggle="#password-field-login" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                     </div>
 
                     <div class="form-group">

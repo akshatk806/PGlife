@@ -183,3 +183,15 @@ input[type="radio"] {
     text-align: center;
     padding-top: 24px;
 }
+
+.field-icon {
+    float: right;
+    margin-left: -23px;
+    margin-top: 11px;
+    position: relative;
+    z-index: 10001;
+}
+
+.toggle-password {
+    cursor: pointer;
+}

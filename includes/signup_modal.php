@@ -43,9 +43,10 @@
                                 <i class="fas fa-lock"></i>
                             </span>
                         </div>
-                        <input type="password" class="form-control" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                        <input id="password-field" type="password" class="form-control" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                         title="Must contain at least one number and one uppercase and lowercase letter, at least one special character and at least 8 or more characters" 
                         placeholder="Password" minlength="6" required>
+                        <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                     </div>
 
                     <div class="input-group form-group">
@@ -54,7 +55,8 @@
                                 <i class="fas fa-university"></i>
                             </span>
                         </div>
-                        <input type="text" class="form-control" name="college_name" placeholder="College Name" maxlength="150" required>
+                        <input type="text" class="form-control" name="college_name" pattern="[a-zA-Z]+" title="Invalid college name"
+                        placeholder="College Name" maxlength="150" required>
                     </div>
 
                     <div class="form-group">
